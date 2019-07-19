@@ -1,0 +1,7 @@
+classes= 20
+#train  = data/VOC/train.txt
+#valid  = data/VOC/2007_test.txt
+names = data/voc.names
+backup = ./backup/
+eval = voc
+
