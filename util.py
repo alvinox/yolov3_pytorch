@@ -26,14 +26,16 @@ def arg_parse():
     parser.add_argument("--confidence", dest = "confidence", help = "Object Confidence to filter predictions", default = 0.5)
     parser.add_argument("--nms_thresh", dest = "nms_thresh", help = "NMS Threshhold", default = 0.4)
     parser.add_argument("--datacfg", dest = 'datacfg', help = "Data config file",
-                        default = "cfg/colo.data", type = str)
+                        default = "cfg/coco.data", type = str)
     parser.add_argument("--cfg", dest = 'cfgfile', help = "Config file",
-                        default = "cfg/yolov3.cfg", type = str)
+                        default = "cfg/yolov3-coco.cfg", type = str)
     parser.add_argument("--weights", dest = 'weightsfile', help = 
                         "weightsfile",
-                        default = "yolov3.weights", type = str)
+                        default = "weights/yolov3-coco.weights", type = str)
     parser.add_argument("--video", dest = 'video', help = "Video to run detection upon",
                         default = None, type = str)
+    parser.add_argument("--save_video", dest = 'save_video', help = "Save the detected video",
+                        default = False, action='store_true')
     return parser.parse_args()
 
 def parse_datacfg(datacfg_file):
