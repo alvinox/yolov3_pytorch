@@ -89,7 +89,8 @@ if __name__ == '__main__':
         det_batch_start = time.time()
         if CUDA:
             batch = batch.cuda()
-        
+
+
         #Tranform the predictions as described in the YOLO paper
         #flatten the prediction vector 
         # B * (bbox properties * no. of anchors) * grid_h * grid_w --> B * bbox * (all the boxes) 

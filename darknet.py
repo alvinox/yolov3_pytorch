@@ -135,11 +135,13 @@ class Darknet(nn.Module):
                 if activation == "leaky":
                     activn = nn.LeakyReLU(0.1, inplace = True)
                     module.add_module("leaky_{0}".format(index), activn)
+                elif activation == "linear":
+                    pass
             
             #If it's a upsample layer
             elif (x["type"] == "upsample"):
                 stride = int(x["stride"])
-                upsample = nn.Upsample(scale_factor = 2, mode = "nearest")
+                upsample = nn.Upsample(scale_factor = stride, mode = "nearest")
                 module.add_module("upsample_{0}".format(index), upsample)
 
             #If it's a route layer

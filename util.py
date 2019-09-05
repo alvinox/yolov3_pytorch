@@ -207,3 +207,16 @@ def showfps(orig_im, frames, start_time):
         return True
     else:
         return False
+
+
+def load_feature_map(fm_file):
+    fp = open(fm_file, "rb")
+    
+    header = np.fromfile(fp, dtype = np.int32, count = 6)
+    (rank, size, batch, c, h, w) = header
+    assert size == batch * c * h * w
+    
+    fm = np.fromfile(fp, dtype = np.float32)
+    fm = fm.reshape((batch, c, h, w))
+
+    return fm

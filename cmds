@@ -1,6 +1,6 @@
-python3 detect.py --datacfg=cfg/coco.data --cfg=cfg/yolov3-coco.cfg --weights=weights/yolov3-coco.weights --images=dog-cycle-car.png
-python3 detect.py --datacfg=cfg/coco.data --cfg=cfg/yolov3-tiny-coco.cfg --weights=weights/yolov3-tiny-coco.weights --images=dog-cycle-car.png
+python3 detect.py --datacfg=cfg/coco.data --cfg=cfg/yolov3-coco.cfg --weights=weights/yolov3-coco.weights --images=dog.jpg
+python3 detect.py --datacfg=cfg/coco.data --cfg=cfg/yolov3-tiny-coco.cfg --weights=weights/yolov3-tiny-coco.weights --images=dog.jpg
 python3 detect.py --datacfg=cfg/voc.data --cfg=cfg/yolov3-tiny-voc.cfg --weights=weights/yolov3-tiny-voc.weights --images=dog-cycle-car.png
 python3 camera.py --datacfg=cfg/coco.data --cfg=cfg/yolov3-coco.cfg --weights=weights/yolov3-coco.weights
-python3 camera.py --datacfg=cfg/coco.data --cfg=cfg/yolov3-coco.cfg --weights=weights/yolov3-coco.weights --video=video.mp4
-python3 camera.py --datacfg=cfg/coco.data --cfg=cfg/yolov3-tiny-coco.cfg --weights=weights/yolov3-tiny-coco.weights --video=tet/konck.mkv --save_video
+python3 camera.py --datacfg=cfg/coco.data --cfg=cfg/yolov3-coco.cfg --weights=weights/yolov3-coco.weights --video=videos/video.mp4
+python3 camera.py --datacfg=cfg/coco.data --cfg=cfg/yolov3-tiny-coco.cfg --weights=weights/yolov3-tiny-coco.weights --video=videos/konck.mkv --save_video
