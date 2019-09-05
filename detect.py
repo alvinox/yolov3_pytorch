@@ -12,7 +12,6 @@ from darknet import Darknet
 
 if __name__ == '__main__':
     args = arg_parse()
-#    scales = args.scales
     images = args.images
     det = args.det
     batch_size = int(args.bs)
@@ -20,6 +19,7 @@ if __name__ == '__main__':
     nms_thresh = float(args.nms_thresh)
     datacfg = args.datacfg
     CUDA = torch.cuda.is_available()
+    #CUDA = False
 
     datacfg_map = parse_datacfg(datacfg)
     num_classes = int(datacfg_map['classes'])
@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     load_images_start = time.time()
     try:
-        img_extension = [".png", ".jepg", ".jpg"]
+        img_extension = [".png", ".jpeg", ".jpg"]
         img_list = [os.path.join(os.path.realpath("."), images, img) for img in os.listdir(images) if os.path.splitext(img)[1].lower() in img_extension]
     except NotADirectoryError:
         img_list = []
